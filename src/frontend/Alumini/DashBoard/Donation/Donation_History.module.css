@@ -1,0 +1,322 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+.pageContainer {
+  display: flex;
+  min-height: 100vh;
+  background-color: #F8FAFC; /* Light gray background */
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #111827; 
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+/* ================== MAIN CONTENT ================== */
+.mainContent {
+  flex: 1;
+  margin-left: 65px;
+  padding: 48px;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease-in-out;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  height: 100vh;
+  max-height: 100vh;
+}
+
+/* Custom Scrollbar Styling - Webkit (Chrome, Safari, Edge) */
+.mainContent::-webkit-scrollbar {
+  width: 10px;
+}
+
+.mainContent::-webkit-scrollbar-track {
+  background-color: #E5E7EB;
+  border-radius: 10px;
+  margin: 8px 0;
+}
+
+.mainContent::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #007BFF, #0069D9);
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  border: 2px solid #E5E7EB;
+  box-shadow: inset 0 0 6px rgba(0, 123, 255, 0.3);
+}
+
+.mainContent::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #0069D9, #0051CC);
+  border-color: #007BFF;
+  box-shadow: inset 0 0 8px rgba(0, 123, 255, 0.5), 0 0 4px rgba(0, 123, 255, 0.4);
+  width: 12px;
+}
+
+.mainContent::-webkit-scrollbar-thumb:active {
+  background: linear-gradient(to bottom, #0051CC, #003d99);
+  box-shadow: inset 0 0 10px rgba(0, 123, 255, 0.7);
+}
+
+/* Firefox Scrollbar */
+.mainContent {
+  scrollbar-color: linear-gradient(to bottom, #007BFF, #0069D9) #E5E7EB;
+  scrollbar-width: auto;
+}
+
+
+/* HEADER */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 32px;
+}
+
+.pageTitle {
+  font-size: 24px;
+  font-weight: 800;
+  color: #111827;
+  margin: 0 0 8px 0;
+  letter-spacing: -0.5px;
+}
+
+.pageSubtitle {
+  font-size: 14px;
+  color: #6B7280;
+  margin: 0;
+}
+
+.newDonationBtn {
+  background-color: #007BFF;
+  color: #FFFFFF;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+.newDonationBtn:hover { background-color: #0069D9; }
+.newDonationBtn span { font-size: 20px; }
+
+/* TABLE CARD */
+.tableCard {
+  background-color: #FFFFFF;
+  border-radius: 12px;
+  border: 1px solid #E5E7EB;
+  margin-bottom: 24px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+}
+
+.tableResponsive {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.donationTable {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.donationTable th {
+  padding: 16px 24px;
+  background-color: #FFFFFF;
+  color: #4B5563;
+  font-size: 13px;
+  font-weight: 700;
+  border-bottom: 1px solid #E5E7EB;
+}
+
+.donationTable td {
+  padding: 16px 24px;
+  font-size: 14px;
+  color: #4B5563;
+  border-bottom: 1px solid #F3F4F6;
+  vertical-align: middle;
+}
+
+.donationTable tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Specific Column Styles */
+.colId { color: #6B7280; }
+.colCause { font-weight: 600; color: #111827; }
+.colTx { color: #9CA3AF; }
+.colAmount { font-weight: 700; color: #111827; }
+
+/* Status Badges */
+.statusBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.statusDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+
+.statusSent { background-color: #ECFDF5; color: #10B981; }
+.statusSent .statusDot { background-color: #10B981; }
+
+.statusPending { background-color: #F3F4F6; color: #4B5563; }
+.statusPending .statusDot { background-color: #6B7280; }
+
+.statusFailed { background-color: #FEF2F2; color: #EF4444; }
+.statusFailed .statusDot { background-color: #EF4444; }
+
+/* PAGINATION */
+.paginationContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  border-top: 1px solid #E5E7EB;
+  background-color: #FAFAFA;
+  border-radius: 0 0 12px 12px;
+}
+
+.paginationText {
+  font-size: 13px;
+  color: #6B7280;
+  margin: 0;
+}
+
+.paginationControls {
+  display: flex;
+  gap: 8px;
+}
+
+.pageBtn {
+  background-color: #FFFFFF;
+  border: 1px solid #E5E7EB;
+  color: #4B5563;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.pageBtn:hover:not(.activePage) { background-color: #F3F4F6; }
+
+.activePage {
+  background-color: #007BFF;
+  color: #FFFFFF;
+  border-color: #007BFF;
+}
+
+/* SUMMARY CARDS GRID */
+.summaryGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.summaryCard {
+  background-color: #FFFFFF;
+  border-radius: 12px;
+  border: 1px solid #E5E7EB;
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+}
+
+.summaryIcon {
+  width: 56px; height: 56px;
+  border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+}
+.summaryIcon span { font-size: 28px; }
+
+.iconBlue { background-color: #E0F2FE; color: #0284C7; }
+.iconGreen { background-color: #D1FAE5; color: #10B981; }
+.iconOrange { background-color: #FEF3C7; color: #F59E0B; }
+
+.summaryLabel {
+  font-size: 11px;
+  font-weight: 700;
+  color: #6B7280;
+  letter-spacing: 0.5px;
+  margin: 0 0 4px 0;
+}
+
+.summaryValue {
+  font-size: 20px;
+  font-weight: 800;
+  color: #111827;
+  margin: 0;
+}
+
+.overlay { display: none; }
+
+
+/* ================== RESPONSIVE BREAKPOINTS ================== */
+
+/* 1. Large Laptops (1440px limit) */
+@media (max-width: 1440px) {
+  .mainContent { padding: 32px; }
+}
+
+/* 2. Tablet / Smaller Desktop Breakpoint (1024px) */
+@media (max-width: 1024px) {
+  .summaryGrid { grid-template-columns: 1fr; gap: 16px; }
+}
+
+/* 3. Mobile / Hamburger Menu (768px) */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 260px; transform: translateX(-100%); align-items: flex-start;
+  }
+  .sidebarOpen { transform: translateX(0); }
+  
+  /* Expand Sidebar items for the drawer view */
+  .sidebarHeader { padding: 24px 20px; justify-content: flex-start; }
+  .navMenu { padding: 16px 12px; align-items: stretch; }
+  .navItem { width: auto; justify-content: flex-start; padding: 12px 16px; height: auto;}
+  .navText { display: block; }
+  .activeNavItem { background-color: #F0F7FF; color: #007BFF; border-left: 4px solid #007BFF; border-radius: 0 8px 8px 0; margin-left: -12px; padding-left: 24px;}
+  .activeNavItem span:first-child { color: #007BFF; }
+  .sidebarFooter { align-items: stretch; padding: 16px 12px; }
+  .logoutBtn { width: auto; justify-content: flex-start; padding: 12px 16px; height: auto; }
+
+  .mainContent { margin-left: 0; padding: 24px; }
+  .mobileHeader { display: flex; }
+
+  .header { flex-direction: column; gap: 16px; }
+  .headerControls { flex-direction: column; width: 100%; gap: 12px; }
+  .volumeControl { width: 100%; }
+  .newDonationBtn { width: 100%; justify-content: center; }
+
+  .overlay {
+    display: block; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+    background-color: rgba(17, 24, 39, 0.4); z-index: 40;
+  }
+}
+
+/* 4. Small Mobile Phones (425px) */
+@media (max-width: 425px) {
+  .mainContent { padding: 16px; }
+  .pageTitle { font-size: 22px; }
+  .pageSubtitle { line-height: 1.4; }
+  
+  .paginationContainer { flex-direction: column; gap: 16px; align-items: center; }
+  .paginationControls { flex-wrap: wrap; justify-content: center; }
+  
+  .summaryCard { flex-direction: column; text-align: center; gap: 16px; }
+}

@@ -1,0 +1,296 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+.pageContainer {
+  display: flex;
+  min-height: 100vh;
+  background-color: #FAFAFA; /* Light background */
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #111827; 
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ================== MAIN CONTENT ================== */
+.mainContent {
+  flex: 1;
+  margin-left: 88px;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease-in-out;
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: 100vh;
+}
+
+/* Volume Bar Style Scrollbar - Webkit (Chrome, Safari, Edge) */
+.mainContent::-webkit-scrollbar {
+  width: 10px;
+}
+
+.mainContent::-webkit-scrollbar-track {
+  background-color: #E5E7EB;
+  border-radius: 10px;
+  margin: 8px 0;
+}
+
+.mainContent::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #007BFF, #0069D9);
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  border: 2px solid #E5E7EB;
+  box-shadow: inset 0 0 6px rgba(0, 123, 255, 0.3);
+}
+
+.mainContent::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #0069D9, #0051CC);
+  border-color: #007BFF;
+  box-shadow: inset 0 0 8px rgba(0, 123, 255, 0.5), 0 0 4px rgba(0, 123, 255, 0.4);
+}
+
+.mainContent::-webkit-scrollbar-thumb:active {
+  background: linear-gradient(to bottom, #0051CC, #003d99);
+  box-shadow: inset 0 0 10px rgba(0, 123, 255, 0.7);
+}
+
+/* Firefox Scrollbar */
+.mainContent {
+  scrollbar-color: linear-gradient(to bottom, #007BFF, #0069D9) #E5E7EB;
+  scrollbar-width: auto;
+}
+
+
+.contentWrapper {
+  flex: 1;
+  padding: 48px 56px;
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* ================== EMAIL MESSAGE CARD ================== */
+.emailMessageCard {
+  background-color: #FFFFFF;
+  border-radius: 12px;
+  border: 1px solid #E5E7EB;
+  padding: 24px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+}
+
+.emailHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #F3F4F6;
+}
+
+.headerLeft {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.mailIcon {
+  color: #0084D6;
+  font-size: 22px;
+}
+
+.badgeUpdate {
+  background-color: #0084D6;
+  color: #FFFFFF;
+  font-size: 11px;
+  font-weight: 800;
+  padding: 4px 10px;
+  border-radius: 4px;
+  letter-spacing: 0.5px;
+}
+
+.sender {
+  font-size: 15px;
+  font-weight: 700;
+  color: #111827;
+}
+
+.divider {
+  color: #D1D5DB;
+}
+
+.subject {
+  font-size: 15px;
+  color: #6B7280;
+}
+
+.collapseBtn {
+  background: none;
+  border: none;
+  color: #111827;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.emailBody {
+  padding-top: 24px;
+  font-size: 15px;
+  color: #4B5563;
+  line-height: 1.6;
+}
+.emailBody p { margin: 0; }
+
+/* ================== FORM CARD ================== */
+.formCard {
+  background-color: #FFFFFF;
+  border-radius: 12px;
+  border: 1px solid #E5E7EB;
+  padding: 40px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+}
+
+.inputGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px 40px; /* row gap, column gap */
+  margin-bottom: 40px;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.inputLabel {
+  font-size: 14px;
+  font-weight: 700;
+  color: #374151;
+}
+
+.inputField, .selectField {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid #E5E7EB;
+  border-radius: 8px;
+  font-size: 15px;
+  color: #111827;
+  font-family: 'Inter', sans-serif;
+  transition: all 0.2s;
+  background-color: #FFFFFF;
+}
+
+.inputField::placeholder, .selectField:invalid {
+  color: #9CA3AF;
+  font-weight: 400;
+}
+
+.inputField:focus, .selectField:focus {
+  outline: none;
+  border-color: #0084D6;
+  box-shadow: 0 0 0 3px rgba(0, 132, 214, 0.1);
+}
+
+.selectWrapper {
+  position: relative;
+  width: 100%;
+}
+
+.selectField {
+  appearance: none;
+  cursor: pointer;
+}
+
+.selectIcon {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #6B7280;
+  pointer-events: none;
+}
+
+.submitContainer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.submitBtn {
+  background-color: #0084D6;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 8px;
+  padding: 14px 32px;
+  font-size: 15px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+.submitBtn:hover {
+  background-color: #006BB5;
+}
+.submitBtn span {
+  font-size: 20px;
+}
+
+.overlay { display: none; }
+
+
+/* ================== RESPONSIVE BREAKPOINTS ================== */
+
+/* 1. Tablets (1024px) */
+@media (max-width: 1024px) {
+  .contentWrapper { padding: 40px; }
+  .formCard { padding: 32px; }
+  .inputGrid { gap: 24px; }
+}
+
+/* 2. Mobile / Hamburger Menu (768px) */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 260px; transform: translateX(-100%); align-items: flex-start;
+  }
+  .sidebarOpen { transform: translateX(0); }
+  
+  .sidebarHeader { padding: 24px 20px; justify-content: flex-start; }
+  .navMenu { padding: 16px 12px; align-items: stretch; }
+  .navItem { width: auto; justify-content: flex-start; padding: 12px 16px; height: auto;}
+  .navText { display: block; }
+  .activeNavItem { background-color: #F0F9FF; color: #0084D6; border-left: 4px solid #0084D6; border-radius: 0 8px 8px 0; margin-left: -12px; padding-left: 24px;}
+  .activeNavItem span:first-child { color: #0084D6; }
+  .sidebarFooter { align-items: stretch; padding: 16px 12px; }
+  .logoutBtn { width: auto; justify-content: flex-start; padding: 12px 16px; height: auto; }
+
+  .mainContent { margin-left: 0; }
+  .mobileHeader { display: flex; }
+
+  .contentWrapper { padding: 24px; }
+  
+  /* Stack grid inputs */
+  .inputGrid { grid-template-columns: 1fr; }
+
+  .overlay {
+    display: block; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+    background-color: rgba(17, 24, 39, 0.4); z-index: 40;
+  }
+}
+
+/* 3. Small Mobile Phones (425px) */
+@media (max-width: 425px) {
+  .contentWrapper { padding: 16px; gap: 24px; }
+  
+  .emailMessageCard { padding: 16px; }
+  .emailHeader { flex-direction: column; align-items: flex-start; gap: 12px; }
+  .headerLeft { gap: 8px; }
+  .divider { display: none; } /* Hide divider when wrapping */
+  .collapseBtn { position: absolute; top: 16px; right: 16px; }
+  
+  .formCard { padding: 24px 16px; }
+  .submitBtn { width: 100%; justify-content: center; }
+}

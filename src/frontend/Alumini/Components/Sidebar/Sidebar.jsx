@@ -1,11 +1,9 @@
-import { useEffect } from "react";
 import styles from "./sidebar.module.css";
 import collegeLogo from '../../../../assets/KSR_College_Logo.svg'
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 export default function Sidebar({ onLogout, currentView }) {
   const navigate = useNavigate();
-  const location = useLocation();
 
   const handleLogout = (e) => {
     e.preventDefault();
@@ -17,7 +15,7 @@ export default function Sidebar({ onLogout, currentView }) {
 
   const handleNavClick = (e, view) => {
     e.preventDefault();
-    navigate(`/${view}`);
+    navigate(`/alumini/${view}`);
   };
 
   return (
@@ -45,8 +43,7 @@ export default function Sidebar({ onLogout, currentView }) {
           </span>
         </a>
         <a 
-          className={`${styles.navLink} ${currentView === 'mail' ? styles.navLinkActive : ''}`} 
-          href="#"
+          className={`${styles.navLink} ${currentView === 'mail' ? styles.navLinkActive : ''}`}
           onClick={(e) => handleNavClick(e, 'mail')}
         >
           <span className="material-symbols-outlined">mail</span>
@@ -54,25 +51,33 @@ export default function Sidebar({ onLogout, currentView }) {
             Mail
           </span>
         </a>
-        <a className={styles.navLink} href="#">
+        <a className={`${styles.navLink} ${currentView === 'job_reference_history' ? styles.navLinkActive : ''}`}
+
+        onClick={() => {navigate('/alumini/JobReference_History')}}>
           <span className="material-symbols-outlined">work</span>
           <span className={styles.navLinkText}>
             Job &amp; Reference
           </span>
         </a>
-        <a className={styles.navLink} href="#">
+        <a className={`${styles.navLink} ${currentView === 'donation_history' ? styles.navLinkActive : ''}`} 
+        onClick={() => {navigate('/alumini/donation_history')}}>
           <span className="material-symbols-outlined">volunteer_activism</span>
           <span className={styles.navLinkText}>
             Donation
           </span>
         </a>
-        <a className={styles.navLink} href="#">
+        <a 
+        className={`${styles.navLink} ${currentView === 'event_reunion' ? styles.navLinkActive : ''}`} 
+        href="#"
+        onClick={(e) => handleNavClick(e, 'event_reunion')}>
           <span className="material-symbols-outlined">event</span>
           <span className={styles.navLinkText}>
             Events &amp; Reunion
           </span>
         </a>
-        <a className={styles.navLink} href="#">
+        <a 
+        className={`${styles.navLink} ${currentView === 'feedback' ? styles.navLinkActive : ''}`} 
+        onClick={() => {navigate('/alumini/feedback')}}>
           <span className="material-symbols-outlined">feedback</span>
           <span className={styles.navLinkText}>
             Feedback
@@ -81,7 +86,8 @@ export default function Sidebar({ onLogout, currentView }) {
       </nav>
 
       <div className={styles.sidebarFooter}>
-        <a className={styles.navLink} href="#">
+        <a className={`${styles.navLink} ${currentView === 'profile' ? styles.navLinkActive : ''}`} 
+            onClick={() => {navigate('/alumini/profile')}}>
           <span className="material-symbols-outlined">account_circle</span>
           <span className={styles.navLinkText}>
             Profile

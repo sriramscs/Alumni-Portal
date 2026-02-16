@@ -1,0 +1,329 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+.pageContainer {
+  display: flex;
+  min-height: 100vh;
+  background-color: #F8FAFC; /* Light gray background */
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #111827; 
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+/* ================== MAIN CONTENT ================== */
+.mainContent {
+  flex: 1;
+  margin-left: 88px;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease-in-out;
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: 100vh;
+}
+
+/* Volume Bar Style Scrollbar - Webkit (Chrome, Safari, Edge) */
+.mainContent::-webkit-scrollbar {
+  width: 10px;
+}
+
+.mainContent::-webkit-scrollbar-track {
+  background-color: #E5E7EB;
+  border-radius: 10px;
+  margin: 8px 0;
+}
+
+.mainContent::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #007BFF, #0069D9);
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  border: 2px solid #E5E7EB;
+  box-shadow: inset 0 0 6px rgba(0, 123, 255, 0.3);
+}
+
+.mainContent::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #0069D9, #0051CC);
+  border-color: #007BFF;
+  box-shadow: inset 0 0 8px rgba(0, 123, 255, 0.5), 0 0 4px rgba(0, 123, 255, 0.4);
+}
+
+.mainContent::-webkit-scrollbar-thumb:active {
+  background: linear-gradient(to bottom, #0051CC, #003d99);
+  box-shadow: inset 0 0 10px rgba(0, 123, 255, 0.7);
+}
+
+/* Firefox Scrollbar */
+.mainContent {
+  scrollbar-color: linear-gradient(to bottom, #007BFF, #0069D9) #E5E7EB;
+  scrollbar-width: auto;
+}
+
+.contentWrapper {
+  flex: 1;
+  padding: 48px 24px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+}
+
+/* ================== PROFILE CARD ================== */
+.profileCard {
+  background-color: #FFFFFF;
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+  padding: 48px 64px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header: Avatar and Name */
+.profileHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.avatarWrapper {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  padding: 4px; /* Creates the white gap */
+  background-color: #FFFFFF;
+  border: 1px solid #E5E7EB; /* The outer ring */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.avatarImage {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.userName {
+  font-size: 28px;
+  font-weight: 800;
+  color: #111827;
+  margin: 0 0 6px 0;
+  letter-spacing: -0.5px;
+}
+
+.userClass {
+  font-size: 15px;
+  color: #6B7280;
+  font-weight: 500;
+  margin: 0;
+}
+
+/* Details List */
+.detailsList {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 32px;
+}
+
+.detailRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 24px 0;
+  border-bottom: 1px solid #F3F4F6;
+}
+.detailRow:first-child {
+  padding-top: 0;
+}
+
+.iconWrapper {
+  color: #9CA3AF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 2px;
+}
+.iconWrapper span {
+  font-size: 24px;
+}
+
+/* Custom LinkedIn Icon styling */
+.linkedinBox {
+  background-color: #0084D6;
+  color: #FFFFFF;
+  font-size: 14px;
+  font-weight: 700;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  margin-top: 2px;
+  margin-left: 2px;
+}
+
+.detailText {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.detailLabel {
+  font-size: 11px;
+  font-weight: 700;
+  color: #9CA3AF;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0;
+}
+
+.detailValue {
+  font-size: 16px;
+  font-weight: 500;
+  color: #111827;
+  margin: 0;
+}
+
+.detailLink {
+  font-size: 16px;
+  font-weight: 500;
+  color: #0084D6;
+  text-decoration: none;
+  margin: 0;
+}
+.detailLink:hover {
+  text-decoration: underline;
+}
+
+.editInput {
+  width: 100%;
+  max-width: 360px;
+  padding: 10px 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #111827;
+  background-color: #FFFFFF;
+}
+
+.editInputSmall {
+  width: 100%;
+  max-width: 360px;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #111827;
+  background-color: #FFFFFF;
+}
+
+.editInput:focus,
+.editInputSmall:focus {
+  outline: none;
+  border-color: #0084D6;
+  box-shadow: 0 0 0 3px rgba(0, 132, 214, 0.1);
+}
+
+/* Action Buttons */
+.cardActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 16px;
+  padding-top: 16px;
+}
+
+.editBtn {
+  background-color: #FFFFFF;
+  color: #0084D6;
+  border: 1px solid #E5E7EB;
+  padding: 10px 24px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.editBtn:hover {
+  background-color: #F8FAFC;
+  border-color: #D1D5DB;
+}
+
+.saveBtn {
+  background-color: #0084D6;
+  color: #FFFFFF;
+  border: none;
+  padding: 10px 32px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+.saveBtn:hover {
+  background-color: #006BB5;
+}
+
+.overlay { display: none; }
+
+
+/* ================== RESPONSIVE BREAKPOINTS ================== */
+
+/* Tablets (1024px) */
+@media (max-width: 1024px) {
+  .contentWrapper { padding: 40px 24px; }
+  .profileCard { padding: 40px; }
+}
+
+/* Mobile / Hamburger Menu (768px) */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 260px; transform: translateX(-100%); align-items: flex-start;
+  }
+  .sidebarOpen { transform: translateX(0); }
+  
+  .sidebarHeader { padding: 24px 20px; justify-content: flex-start; }
+  .navMenu { padding: 16px 12px; align-items: stretch; }
+  .navItem { width: auto; justify-content: flex-start; padding: 12px 16px; height: auto;}
+  .navText { display: block; }
+  .activeNavItem { background-color: #F0F9FF; color: #0084D6; border-left: 4px solid #0084D6; border-radius: 0 8px 8px 0; margin-left: -12px; padding-left: 24px;}
+  .activeNavItem span:first-child { color: #0084D6; }
+  .sidebarFooter { align-items: stretch; padding: 16px 12px; }
+  .logoutBtn { width: auto; justify-content: flex-start; padding: 12px 16px; height: auto; }
+
+  .mainContent { margin-left: 0; }
+  .mobileHeader { display: flex; }
+
+  .contentWrapper { padding: 24px 16px; }
+
+  .overlay {
+    display: block; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+    background-color: rgba(17, 24, 39, 0.4); z-index: 40;
+  }
+}
+
+/* Small Mobile Phones (425px) */
+@media (max-width: 425px) {
+  .profileCard { padding: 32px 20px; }
+  
+  .avatarWrapper { width: 100px; height: 100px; }
+  .userName { font-size: 24px; }
+  
+  .detailRow { gap: 16px; flex-direction: column; align-items: flex-start; }
+  .iconWrapper { display: none; } /* Hide icons on tiny screens for more text room if needed, or keep them. Let's keep them and align row */
+  .detailRow { flex-direction: row; }
+  .iconWrapper { display: flex; }
+  
+  .detailValue, .detailLink { font-size: 15px; word-break: break-all; }
+  
+  .cardActions { flex-direction: column; width: 100%; }
+  .editBtn, .saveBtn { width: 100%; text-align: center; }
+}

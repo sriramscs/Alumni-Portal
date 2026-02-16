@@ -3,7 +3,7 @@ import Sidebar from "../Components/Sidebar/Sidebar";
 import { useNavigate } from 'react-router-dom';
 
 
-export default function Dashboard({ onLogout }) {
+export default function AluminiDashboard({ onLogout }) {
     const navigate = useNavigate();
   
   return (
@@ -89,7 +89,7 @@ export default function Dashboard({ onLogout }) {
                 </div>
                 <button 
                   className={`${styles.buttonBase} ${styles.buttonSecondary}`}
-                  onClick={() => navigate('/mail') }
+                  onClick={() => navigate('/alumini/mail') }
                 >
                   Go to Inbox
                 </button>
@@ -183,7 +183,7 @@ export default function Dashboard({ onLogout }) {
                     <p className={styles.countdownLabel}>Hrs</p>
                   </div>
                 </div>
-                <button className={`${styles.buttonBase} ${styles.buttonDark}`}>RSVP Today</button>
+                <button className={`${styles.buttonBase} ${styles.buttonDark}`} onClick={() => navigate('/alumini/event_reunion')} >RSVP Today</button>
               </div>
 
               {/* Achievements & News Card */}

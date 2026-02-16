@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styles from './LoginGateway.module.css';
-import ksrLogo from '../../../assets/KSR_College_Logo.svg';
+import ksrLogo from '../../assets/KSR_College_Logo.svg';
 
 export default function LoginGateway({ onLogin }) {
   const navigate = useNavigate();
@@ -9,12 +9,21 @@ export default function LoginGateway({ onLogin }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
+// Temporary role
+  const [role,SetRole] = useState('alumni');
+
+
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log('Login attempted with:', { email, password });
     if (onLogin) {
       onLogin();
-      navigate('/dashboard');
+      if(role === 'alumini'){
+        navigate('/alumini/dashboard');
+      }
+      if(role === 'admin'){
+        navigate('/admin/dashboard');
+      }
     }
   };
 
@@ -22,7 +31,12 @@ export default function LoginGateway({ onLogin }) {
     console.log('Google login attempted');
     if (onLogin) {
       onLogin();
-      navigate('/dashboard');
+      if(role === 'alumini'){
+        navigate('/alumini/dashboard');
+      }
+      if(role === 'admin'){
+        navigate('/admin/dashboard');
+      }
     }
   };
 

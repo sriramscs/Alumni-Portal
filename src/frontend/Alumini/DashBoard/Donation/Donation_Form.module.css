@@ -1,0 +1,343 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+.pageContainer {
+  display: flex;
+  min-height: 100vh;
+  background-color: #F8FAFC; /* Light gray background matching image */
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #111827; 
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ================== MAIN CONTENT ================== */
+.mainContent {
+  flex: 1;
+  margin-left: 88px;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease-in-out;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  height: 100vh;
+  max-height: 100vh;
+}
+
+/* Volume Bar Style Scrollbar - Webkit (Chrome, Safari, Edge) */
+.mainContent::-webkit-scrollbar {
+  width: 10px;
+}
+
+.mainContent::-webkit-scrollbar-track {
+  background-color: #E5E7EB;
+  border-radius: 10px;
+  margin: 8px 0;
+}
+
+.mainContent::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #007BFF, #0069D9);
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  border: 2px solid #E5E7EB;
+  box-shadow: inset 0 0 6px rgba(0, 123, 255, 0.3);
+}
+
+.mainContent::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #0069D9, #0051CC);
+  border-color: #007BFF;
+  box-shadow: inset 0 0 8px rgba(0, 123, 255, 0.5), 0 0 4px rgba(0, 123, 255, 0.4);
+}
+
+.mainContent::-webkit-scrollbar-thumb:active {
+  background: linear-gradient(to bottom, #0051CC, #003d99);
+  box-shadow: inset 0 0 10px rgba(0, 123, 255, 0.7);
+}
+
+/* Firefox Scrollbar */
+.mainContent {
+  scrollbar-color: linear-gradient(to bottom, #007BFF, #0069D9) #E5E7EB;
+  scrollbar-width: auto;
+}
+
+.contentWrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 24px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Back Button */
+.backButton {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #475569;
+    cursor: pointer;
+    transition: color 0.2s;
+    width: fit-content;
+}
+
+.backButton:hover {
+    color: #2563eb;
+}
+
+.backButton span {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* HEADER */
+.header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.pageTitle {
+  font-size: 32px;
+  font-weight: 800;
+  color: #0084D6; /* Blue title color from image */
+  margin: 0 0 12px 0;
+  letter-spacing: -0.5px;
+}
+
+.pageSubtitle {
+  font-size: 16px;
+  color: #6B7280;
+  margin: 0;
+}
+
+/* FORM CARD */
+.formCard {
+  background-color: #FFFFFF;
+  border-radius: 16px;
+  padding: 48px 64px;
+  width: 100%;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.inputSection, .methodSection {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.inputLabel {
+  font-size: 15px;
+  font-weight: 600;
+  color: #4B5563;
+  margin-bottom: 16px;
+}
+
+.inputWrapper {
+  width: 100%;
+  max-width: 400px;
+  background-color: #F8FAFC;
+  border: 1px solid #E5E7EB;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  height: 64px;
+  transition: border-color 0.2s;
+}
+.inputWrapper:focus-within {
+  border-color: #0084D6;
+}
+
+.currencySymbol {
+  font-size: 20px;
+  color: #6B7280;
+  font-weight: 600;
+}
+
+.amountInput {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 24px;
+  font-weight: 800;
+  color: #111827;
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+}
+/* Hide number input spinners */
+.amountInput::-webkit-outer-spin-button,
+.amountInput::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* METHOD GRID */
+.methodGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  width: 100%;
+}
+
+.methodBtn {
+  background-color: #FFFFFF;
+  border: 1px solid #E5E7EB;
+  border-radius: 8px;
+  padding: 24px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+  color: #4B5563;
+}
+.methodBtn span:first-child {
+  font-size: 32px;
+}
+.methodBtn span:last-child {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.methodBtn:hover {
+  border-color: #CBD5E1;
+  background-color: #F8FAFC;
+}
+
+.methodActive {
+  border: 2px solid #0084D6;
+  color: #0084D6;
+  background-color: #F0F9FF;
+}
+.methodActive:hover {
+  border-color: #0084D6;
+  background-color: #F0F9FF;
+}
+
+/* DONATE BUTTON */
+.donateSubmitBtn {
+  background-color: #0084D6;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 8px;
+  padding: 16px 32px;
+  font-size: 16px;
+  font-weight: 700;
+  width: 100%;
+  max-width: 300px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 132, 214, 0.3);
+  transition: background-color 0.2s;
+  margin-bottom: 32px;
+}
+.donateSubmitBtn:hover {
+  background-color: #006BB5;
+}
+
+/* SECURITY BADGES */
+.securityBadges {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: #9CA3AF;
+}
+
+.badgeItem {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+.badgeItem span:first-child {
+  font-size: 14px;
+}
+
+.badgeDot {
+  font-size: 16px;
+}
+
+/* FOOTER */
+.pageFooter {
+  margin-top: 48px;
+  font-size: 13px;
+  color: #9CA3AF;
+  text-align: center;
+}
+
+.overlay { display: none; }
+
+
+/* ================== RESPONSIVE BREAKPOINTS ================== */
+
+/* 1. Tablet (1024px) */
+@media (max-width: 1024px) {
+  .formCard {
+    padding: 40px;
+  }
+}
+
+/* 2. Mobile / Hamburger Menu (768px) */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 260px; transform: translateX(-100%); align-items: flex-start;
+  }
+  .sidebarOpen { transform: translateX(0); }
+  
+  /* Expand Sidebar items for the drawer view */
+  .sidebarHeader { padding: 24px 20px; justify-content: flex-start; }
+  .navMenu { padding: 16px 12px; align-items: stretch; }
+  .navItem { width: auto; justify-content: flex-start; padding: 12px 16px; height: auto;}
+  .navText { display: block; }
+  .activeNavItem { background-color: #F0F9FF; color: #0084D6; border-left: 4px solid #0084D6; border-radius: 0 8px 8px 0; margin-left: -12px; padding-left: 24px;}
+  .activeNavItem span:first-child { color: #0084D6; }
+  .sidebarFooter { align-items: stretch; padding: 16px 12px; }
+  .logoutBtn { width: auto; justify-content: flex-start; padding: 12px 16px; height: auto; }
+
+  .mainContent { margin-left: 0; }
+  .mobileHeader { display: flex; }
+
+  .contentWrapper { padding: 24px 16px; }
+
+  .overlay {
+    display: block; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+    background-color: rgba(17, 24, 39, 0.4); z-index: 40;
+  }
+
+  .methodGrid {
+    grid-template-columns: 1fr;
+  }
+  .methodBtn {
+    flex-direction: row;
+    justify-content: flex-start;
+    padding: 16px 20px;
+  }
+}
+
+/* 3. Small Mobile Phones (425px) */
+@media (max-width: 425px) {
+  .pageTitle { font-size: 24px; }
+  .pageSubtitle { font-size: 14px; line-height: 1.4; }
+  
+  .formCard { padding: 32px 20px; border-radius: 12px; }
+  
+  .inputWrapper { height: 56px; }
+  .amountInput { font-size: 20px; }
+  
+  .donateSubmitBtn { max-width: 100%; }
+  
+  .securityBadges { flex-direction: column; gap: 8px; }
+  .badgeDot { display: none; }
+}

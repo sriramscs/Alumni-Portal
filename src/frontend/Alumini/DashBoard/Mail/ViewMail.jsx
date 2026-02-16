@@ -1,14 +1,11 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import styles from './ViewMail.module.css';
-import Sidebar from '../Components/Sidebar/Sidebar';
+import Sidebar from '../../Components/Sidebar/Sidebar';
 
 const ViewMail = ({ onLogout }) => {
   const navigate = useNavigate();
 
-  const handleBack = () => {
-    navigate('/mail');
-  };
   return (
     <div className={styles.pageContainer}>
       {/* Sidebar */}
@@ -20,9 +17,9 @@ const ViewMail = ({ onLogout }) => {
         <div className={`${styles.mailContainer} ${styles.customScrollbar}`}>
           <div className={styles.contentWrapper}>
             {/* Navigation Back */}
-            <div className={styles.backButton} onClick={handleBack}>
+            <div className={styles.backButton} onClick={() => window.history.back()}>
               <span className="material-symbols-outlined">arrow_back</span>
-              <span>Back to Inbox</span>
+              <span>Back</span>
             </div>
 
             {/* Mail Card */}
@@ -116,7 +113,7 @@ const ViewMail = ({ onLogout }) => {
                 <button className={styles.declineButton}>
                   Decline
                 </button>
-                <button className={styles.acceptButton}>
+                <button className={styles.acceptButton} onClick={() => {navigate('/alumini/mail/viewmail/acceptmail')}}>
                   Accept Invitation
                 </button>
               </div>

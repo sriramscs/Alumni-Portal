@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styles from './Mail.module.css';
-import Sidebar from '../Components/Sidebar/Sidebar';
+import Sidebar from '../../Components/Sidebar/Sidebar';
 
 export default function Mail({ onLogout, onNavigate, currentView }) {
   const [searchQuery, setSearchQuery] = useState('');
@@ -12,7 +12,7 @@ export default function Mail({ onLogout, onNavigate, currentView }) {
   };
 
   const handleViewMail = () => {
-    navigate('/mail/view');
+    navigate('/alumini/mail/viewmail');
   };
 
   const mailData = [

@@ -1,0 +1,328 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+.pageContainer {
+  display: flex;
+  min-height: 100vh;
+  background-color: #F8FAFC; /* Light background from screenshot */
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #111827; 
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+/* ================== MAIN CONTENT ================== */
+.mainContent {
+  flex: 1;
+  margin-left: 65px;
+  padding: 48px 56px;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease-in-out;
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: 100vh;
+  max-height: 100vh;
+}
+
+/* Volume Bar Style Scrollbar - Webkit (Chrome, Safari, Edge) */
+.mainContent::-webkit-scrollbar {
+  width: 10px;
+}
+
+.mainContent::-webkit-scrollbar-track {
+  background-color: #E5E7EB;
+  border-radius: 10px;
+  margin: 8px 0;
+}
+
+.mainContent::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #007BFF, #0069D9);
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  border: 2px solid #E5E7EB;
+  box-shadow: inset 0 0 6px rgba(0, 123, 255, 0.3);
+}
+
+.mainContent::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #0069D9, #0051CC);
+  border-color: #007BFF;
+  box-shadow: inset 0 0 8px rgba(0, 123, 255, 0.5), 0 0 4px rgba(0, 123, 255, 0.4);
+}
+
+.mainContent::-webkit-scrollbar-thumb:active {
+  background: linear-gradient(to bottom, #0051CC, #003d99);
+  box-shadow: inset 0 0 10px rgba(0, 123, 255, 0.7);
+}
+
+/* Firefox Scrollbar */
+.mainContent {
+  scrollbar-color: linear-gradient(to bottom, #007BFF, #0069D9) #E5E7EB;
+  scrollbar-width: auto;
+}
+
+
+/* HEADER */
+.header {
+  margin-bottom: 40px;
+}
+
+.pageTitle {
+  font-size: 26px;
+  font-weight: 800;
+  color: #111827;
+  margin: 0 0 8px 0;
+  letter-spacing: -0.5px;
+}
+
+.pageSubtitle {
+  font-size: 15px;
+  color: #6B7280;
+  margin: 0;
+}
+
+/* ================== JOBS GRID & CARDS ================== */
+.jobsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.jobCard {
+  background-color: #FFFFFF;
+  border-radius: 16px;
+  padding: 24px;
+  border: 1px solid #E5E7EB;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 200px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+  transition: box-shadow 0.2s;
+}
+.jobCard:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+/* Post New Job Card Special Styling */
+.postNewCard {
+  border: 2px dashed #D1D5DB;
+  background-color: transparent;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.postNewCard:hover {
+  background-color: #FFFFFF;
+  border-color: #0084D6;
+}
+
+.addIconContainer {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid #E5E7EB;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0084D6;
+  margin-bottom: 16px;
+  background-color: #FFFFFF;
+}
+
+.postTitle {
+  font-size: 16px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 8px 0;
+}
+
+.postSubtitle {
+  font-size: 13px;
+  color: #9CA3AF;
+  margin: 0;
+}
+
+/* Card Internals */
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+
+/* Card Icons - The pill shapes from the screenshot */
+.jobIcon {
+  padding: 8px 20px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.jobIcon span { font-size: 20px; }
+
+/* Icon Colors Matching the Screenshot */
+.iconBlue { background-color: #EFF6FF; color: #3B82F6; }
+.iconPurple { background-color: #F5F3FF; color: #8B5CF6; }
+.iconPurpleAlt { background-color: #FAF5FF; color: #A855F7; }
+.iconTeal { background-color: #ECFDF5; color: #10B981; }
+.iconPink { background-color: #FDF2F8; color: #EC4899; }
+.iconLightBlue { background-color: #F0F9FF; color: #0EA5E9; }
+.iconGreen { background-color: #DCFCE7; color: #22C55E; }
+.iconOrange { background-color: #FFF7ED; color: #F97316; }
+
+/* Menu & Dropdown */
+.menuContainer {
+  position: relative;
+}
+
+.moreBtn {
+  background: none;
+  border: none;
+  color: #9CA3AF;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+.moreBtn:hover, .moreBtnActive {
+  background-color: #F3F4F6;
+  color: #4B5563;
+}
+
+.dropdownMenu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: #FFFFFF;
+  border: 1px solid #E5E7EB;
+  border-radius: 8px;
+  padding: 8px;
+  box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+  min-width: 140px;
+  z-index: 10;
+}
+
+.dropdownItem {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border: none;
+  background: none;
+  color: #EF4444; /* Red color for remove action */
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background-color 0.2s;
+}
+.dropdownItem:hover {
+  background-color: #FEF2F2;
+}
+.dropdownItem span {
+  font-size: 18px;
+}
+
+/* Card Content */
+.cardBody {
+  margin-bottom: 32px;
+}
+
+.jobTitle {
+  font-size: 18px;
+  font-weight: 800;
+  color: #111827;
+  margin: 0 0 6px 0;
+  line-height: 1.3;
+}
+
+.companyName {
+  font-size: 14px;
+  font-weight: 500;
+  color: #6B7280;
+  margin: 0;
+}
+
+/* Card Footer */
+.cardFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.statusBadge {
+  font-size: 11px;
+  font-weight: 800;
+  padding: 4px 12px;
+  border-radius: 999px;
+  letter-spacing: 0.5px;
+}
+
+.statusACTIVE { background-color: #DCFCE7; color: #16A34A; }
+.statusPENDING { background-color: #FEF9C3; color: #CA8A04; }
+.statusCLOSED { background-color: #FEE2E2; color: #DC2626; }
+
+.jobDate {
+  font-size: 12px;
+  font-weight: 500;
+  color: #9CA3AF;
+  font-style: italic; /* Matching the slight italic tilt in the image */
+}
+
+.overlay { display: none; }
+
+
+/* ================== RESPONSIVE BREAKPOINTS ================== */
+
+/* 1. Large Laptops (1024px - 1440px) */
+@media (max-width: 1280px) {
+  .jobsGrid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* 2. Tablets (768px - 1024px) */
+@media (max-width: 1024px) {
+  .mainContent { padding: 40px; }
+}
+
+/* 3. Mobile / Hamburger Menu (768px) */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 260px; transform: translateX(-100%); align-items: flex-start;
+  }
+  .sidebarOpen { transform: translateX(0); }
+  
+  /* Expand Sidebar items for the drawer view */
+  .sidebarHeader { padding: 24px 20px; justify-content: flex-start; }
+  .navMenu { padding: 16px 12px; align-items: stretch; }
+  .navItem { width: auto; justify-content: flex-start; padding: 12px 16px; height: auto;}
+  .navText { display: block; }
+  .activeNavItem { background-color: #F0F9FF; color: #0084D6; border-left: 4px solid #0084D6; border-radius: 0 8px 8px 0; margin-left: -12px; padding-left: 24px;}
+  .activeNavItem span:first-child { color: #0084D6; }
+  .sidebarFooter { align-items: stretch; padding: 16px 12px; }
+  .logoutBtn { width: auto; justify-content: flex-start; padding: 12px 16px; height: auto; }
+
+  .mainContent { margin-left: 0; padding: 24px; }
+  .mobileHeader { display: flex; }
+
+  .jobsGrid { grid-template-columns: 1fr; }
+
+  .overlay {
+    display: block; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+    background-color: rgba(17, 24, 39, 0.4); z-index: 40;
+  }
+}
+
+/* 4. Small Mobile Phones (425px) */
+@media (max-width: 425px) {
+  .mainContent { padding: 16px; }
+  .pageTitle { font-size: 24px; }
+  .pageSubtitle { line-height: 1.4; }
+}
