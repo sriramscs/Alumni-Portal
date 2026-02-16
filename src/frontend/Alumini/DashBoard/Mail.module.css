@@ -176,8 +176,8 @@
   font-size: 1rem;
   line-height: 1.625;
   display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
+  -line-clamp: 3;
+  -webkit-box-orient: vertical; /* stylelint-disable-line */
   overflow: hidden;
   margin: 0;
 }
