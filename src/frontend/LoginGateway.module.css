@@ -1,0 +1,411 @@
+/* Login Gateway Container */
+.container {
+  min-height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #F8FAFC;
+  padding: 1.5rem;
+  font-family: 'Inter', sans-serif;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Particles Background */
+.particlesContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.particle {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background-color: #050B18;
+  border-radius: 50%;
+  opacity: 0.15;
+}
+
+/* Gradient Blur Effects */
+.blurBlue {
+  position: absolute;
+  background: rgba(0, 91, 177, 0.05);
+  width: 500px;
+  height: 500px;
+  filter: blur(120px);
+  border-radius: 50%;
+  top: -192px;
+  left: -192px;
+}
+
+.blurOrange {
+  position: absolute;
+  background: rgba(255, 148, 0, 0.05);
+  width: 400px;
+  height: 400px;
+  filter: blur(100px);
+  border-radius: 50%;
+  bottom: -128px;
+  right: -128px;
+}
+
+@keyframes pulseSlow {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* Content Wrapper */
+.contentWrapper {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 440px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Glass Card */
+.glassCard {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 91, 177, 0.08);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.05);
+  border-radius: 1rem;
+  padding: 2rem 2.5rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Header Section */
+.headerSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2.5rem;
+}
+
+.logoBox {
+  width: 16rem;
+  height: 6rem;
+  background: transparent;
+  /* border-radius: 1rem; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* padding: 0.75rem; */
+  /* margin-bottom: 1.5rem; */
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.logoSvg {
+  color: #005BB1;
+  width: 100%;
+  height: 100%;
+}
+
+.headerText {
+  text-align: center;
+}
+
+/* Header */
+.title {
+  font-size: 1.875rem;
+  font-weight: 800;
+  color: #005BB1;
+  text-align: center;
+  margin: 0;
+  letter-spacing: -0.025em;
+}
+
+.subtitle {
+  text-align: center;
+  color: #64748b;
+  font-size: 0.875rem;
+  margin: 0.375rem 0 0 0;
+  font-weight: 500;
+  letter-spacing: 0.025em;
+}
+
+/* Form */
+.form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+/* Input Group */
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.labelRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 0.25rem;
+}
+
+.label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #334155;
+  margin-left: 0.25rem;
+}
+
+.forgotPassword {
+  font-size: 0.75rem;
+  color: #FF9400;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+
+.forgotPassword:hover {
+  color: #ea7c00;
+}
+
+/* Input Wrapper */
+.inputWrapper {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  border-radius: 3rem;
+  border: 1px solid #e2e8f0;
+  background: #f8fafc;
+  transition: all 0.2s;
+  overflow: hidden;
+}
+
+.inputWrapper:focus-within {
+  box-shadow: 0 0 0 4px rgba(0, 91, 177, 0.05);
+  border-color: #005BB1;
+  background: white;
+}
+
+.inputIconBox {
+  color: #94a3b8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 1.25rem;
+  padding-right: 0.75rem;
+  flex-shrink: 0;
+  border: 0 !important;
+  outline: none;
+}
+
+.inputIconBox span {
+  font-size: 1.25rem;
+  border: none;
+  outline: none;
+}
+
+.input {
+  flex: 1;
+  width: 100%;
+  border: 0 !important;
+  background: transparent;
+  color: #1e293b;
+  padding: 0.875rem 1rem 0.875rem 0;
+  font-size: 0.875rem;
+  outline: none;
+  -webkit-appearance: none;
+  appearance: none;
+  box-shadow: none !important;
+  margin: 0;
+}
+
+.input::placeholder {
+  color: #94a3b8;
+}
+
+/* Hide browser's native password reveal button */
+.input::-ms-reveal,
+.input::-ms-clear {
+  display: none;
+}
+
+.input::-webkit-credentials-auto-fill-button,
+.input::-webkit-textfield-decoration-container {
+  visibility: hidden;
+  pointer-events: none;
+  position: absolute;
+}
+
+/* Toggle Password Button */
+.togglePassword {
+  color: #94a3b8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-right: 1.25rem;
+  padding-left: 0.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.2s;
+  outline: none;
+  box-shadow: none;
+  flex-shrink: 0;
+}
+
+.togglePassword:hover {
+  color: #64748b;
+}
+
+.togglePassword:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.togglePassword span {
+  font-size: 1.25rem;
+}
+
+/* Login Button */
+.loginButton {
+  margin-top: 1rem;
+  width: 100%;
+  background: #005BB1;
+  color: white;
+  font-weight: 600;
+  padding: 1rem 1.5rem;
+  border-radius: 3rem;
+  box-shadow: 0 4px 12px rgba(0, 91, 177, 0.15);
+  transition: all 0.3s;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+}
+
+.loginButton:hover {
+  background: #004a94;
+  box-shadow: 0 6px 20px rgba(0, 91, 177, 0.25);
+  transform: translateY(-1px);
+}
+
+.loginButton:active {
+  transform: translateY(0);
+}
+
+.loginButton span {
+  font-size: 1rem;
+}
+
+/* Divider */
+.divider {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.dividerLine {
+  height: 1px;
+  flex: 1;
+  background: #f1f5f9;
+}
+
+.dividerText {
+  color: #94a3b8;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  white-space: nowrap;
+}
+
+/* Google Button */
+.googleButton {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 0.875rem 1.5rem;
+  border-radius: 3rem;
+  border: 1px solid #e2e8f0;
+  background: white;
+  transition: all 0.2s;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 0.9375rem;
+  color: #1e293b;
+}
+
+.googleButton:hover {
+  background: #f8fafc;
+  border-color: #cbd5e1;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.googleButton span {
+  letter-spacing: -0.01em;
+}
+
+.googleIcon {
+  width: 1.25rem;
+  height: 1.25rem;
+  transition: transform 0.2s;
+}
+
+.googleButton:hover .googleIcon {
+  transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+  .glassCard {
+    padding: 2.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .glassCard {
+    padding: 2rem 1.5rem;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .logoBox {
+    width: 4rem;
+    height: 4rem;
+  }
+}
