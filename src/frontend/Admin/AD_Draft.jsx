@@ -1,7 +1,12 @@
-import styles from './Draft.module.css';
+import styles from './AD_Draft.module.css';
 import Sidebar from './Components/Sidebar/Sidebar';
+import { Send } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const Admin_Draft = ( {onLogout} ) => {
+
+  const navigate = useNavigate();
+
   return (
     <div className={styles.pageContainer}>
       
@@ -11,13 +16,20 @@ const Admin_Draft = ( {onLogout} ) => {
 
       {/*  Main Content */}
       <main className={styles.mainContent} data-purpose="main-content-area">
-        {/* Back Button */}
-        <div className={styles.backButton} onClick={() => window.history.back()}>
-          <span className="material-symbols-outlined">arrow_back</span>
-          <span>Back</span>
+        <div className={styles.backButtonWrapper}>
+          {/* Back Button */}
+          <div className={styles.backButton} onClick={() => window.history.back()}>
+              <span className="material-symbols-outlined">arrow_back</span>
+              <span>Back</span>
+          </div>
+          <div className={styles.actionButtons}>
+            <button className={styles.editBtn} onClick={() => navigate('/admin/mail/create_mail')}>Edit</button>
+            <button className={styles.deleteBtn} onClick={() => { navigate('/admin/mail/draft_history') }} >Delete</button>
+          </div>
         </div>
 
-        {/*  Email Content Card */}
+
+
         <article className={styles.draftDetailCard} data-purpose="draft-detail-card">
           
           {/* Card Header: Metadata */}
@@ -72,9 +84,7 @@ const Admin_Draft = ( {onLogout} ) => {
           {/* Card Footer: Send Action */}
           <footer className={styles.cardFooter}>
             <button className={styles.sendBtn} data-purpose="send-draft-action">
-              <svg className={styles.navIcon} fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
-              </svg>
+              <Send className={styles.sendIcon} />
               Send Now
             </button>
           </footer>

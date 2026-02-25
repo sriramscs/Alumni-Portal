@@ -51,25 +51,35 @@ export default function Sidebar({ onLogout, currentView }) {
             Mail
           </span>
         </a>
-        <a className={`${styles.navLink} ${currentView === 'job_reference_history' ? styles.navLinkActive : ''}`}
+        <a 
+          className={`${styles.navLink} ${currentView === 'alumini' ? styles.navLinkActive : ''}`}
+          onClick={(e) => handleNavClick(e, 'alumini')}
+        >
+          <span className="material-symbols-outlined">groups</span>
+          <span className={styles.navLinkText}>
+            Alumni
 
-        onClick={() => {navigate('/admin/job_reference_history')}}>
+          </span>
+        </a>
+        <a className={`${styles.navLink} ${currentView === 'job_and_reference' ? styles.navLinkActive : ''}`}
+
+        onClick={(e) => handleNavClick(e, 'job_and_reference')}>
           <span className="material-symbols-outlined">work</span>
           <span className={styles.navLinkText}>
             Job &amp; Reference
           </span>
         </a>
         <a className={`${styles.navLink} ${currentView === 'donation_history' ? styles.navLinkActive : ''}`} 
-        onClick={() => {navigate('/admin/donation_history')}}>
+        onClick={(e) => handleNavClick(e, 'donation_history')}>
           <span className="material-symbols-outlined">volunteer_activism</span>
           <span className={styles.navLinkText}>
             Donation
           </span>
         </a>
         <a 
-        className={`${styles.navLink} ${currentView === 'event_reunion' ? styles.navLinkActive : ''}`} 
+        className={`${styles.navLink} ${currentView === 'event_and_reunion_history' ? styles.navLinkActive : ''}`} 
         href="#"
-        onClick={(e) => handleNavClick(e, 'event_reunion')}>
+        onClick={(e) => handleNavClick(e, 'event_and_reunion_history')}>
           <span className="material-symbols-outlined">event</span>
           <span className={styles.navLinkText}>
             Events &amp; Reunion
@@ -77,7 +87,7 @@ export default function Sidebar({ onLogout, currentView }) {
         </a>
         <a 
         className={`${styles.navLink} ${currentView === 'feedback' ? styles.navLinkActive : ''}`} 
-        onClick={() => {navigate('/admin/feedback')}}>
+        onClick={(e) => handleNavClick(e, 'feedback')}>
           <span className="material-symbols-outlined">feedback</span>
           <span className={styles.navLinkText}>
             Feedback
@@ -87,7 +97,7 @@ export default function Sidebar({ onLogout, currentView }) {
 
       <div className={styles.sidebarFooter}>
         <a className={`${styles.navLink} ${currentView === 'profile' ? styles.navLinkActive : ''}`} 
-            onClick={() => {navigate('/admin/profile')}}>
+            onClick={(e) => handleNavClick(e, 'profile')}>
           <span className="material-symbols-outlined">account_circle</span>
           <span className={styles.navLinkText}>
             Profile

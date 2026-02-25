@@ -22,10 +22,23 @@ import Alumini_JobReference_Form from './frontend/Alumini/JobReference_Form';
 import Alumini_Profile from './frontend/Alumini/Profile';
 
 // Admin Imports
-import Admin_Mail from './frontend/Admin/Mail';
-import Admin_CreateMail from './frontend/Admin/CreateMail';
-import Admin_Draft_History from './frontend/Admin/Draft_History';
-import Admin_Draft from './frontend/Admin/Draft';
+import Admin_Mail from './frontend/Admin/AD_Mail';
+import Admin_CreateMail from './frontend/Admin/AD_CreateMail';
+import Admin_Draft_History from './frontend/Admin/AD_Draft_History';
+import Admin_Draft from './frontend/Admin/AD_Draft';
+import Admin_Job_and_Reference from './frontend/Admin/AD_Job_and_Reference';
+import Admin_View_Job_and_Reference from './frontend/Admin/AD_View_Job_and_Reference';
+import Admin_Donation_History from './frontend/Admin/AD_Donation_History';
+import Admin_View_Donation from './frontend/Admin/AD_View_Donation';
+import Admin_Event_and_Reunion_History from './frontend/Admin/AD_Event_and_Reunion_History';
+import Admin_Event_and_Reunion_Invitation from './frontend/Admin/AD_Event_and_Reunion_Invitation';
+import Admin_Event_and_Reunion_Form1 from './frontend/Admin/AD_Event_and_Reunion_Form1';
+import Admin_Event_and_Reunion_Form2 from './frontend/Admin/AD_Event_and_Reunion_Form2';
+import Admin_Feedback from './frontend/Admin/AD_Feedback';
+import Admin_Feedback_Form from './frontend/Admin/AD_Feedback_Form';
+import Admin_Alumini from './frontend/Admin/AD_Alumini';
+import Admin_Alumini_Form from './frontend/Admin/AD_Alumini_Form';
+import Admin_Dashboard from './frontend/Admin/AD_Dashboard';
 
 
 function App() {
@@ -131,6 +144,12 @@ function App() {
 
 
 {/* Admin Routes */}
+{/* Admin Dashboard Route */}
+        <Route
+          path="/admin/dashboard"
+          element={isLoggedIn ? <Admin_Dashboard onLogout={handleLogout} /> : <Navigate to="/login" />}
+        />
+
 {/* Admin Mail Routes */}
         <Route
           path="/admin/mail"
@@ -150,11 +169,67 @@ function App() {
         />
 
 
+{/* Admin Job and Reference Routes */}
+        <Route
+          path="/admin/job_and_reference"
+          element={isLoggedIn ? <Admin_Job_and_Reference onLogout={handleLogout} /> : <Navigate to="/login" />}
+          />
+        <Route
+          path="/admin/view_job_and_reference"
+          element={isLoggedIn ? <Admin_View_Job_and_Reference onLogout={handleLogout} /> : <Navigate to="/login" />}
+          />
+
+
+{/* Admin Donation Routes */}
+        <Route
+          path="/admin/donation_history"
+          element={isLoggedIn ? <Admin_Donation_History onLogout={handleLogout} /> : <Navigate to="/login" />}
+          />
+        <Route
+          path="/admin/view_donation"
+          element={isLoggedIn ? <Admin_View_Donation onLogout={handleLogout} /> : <Navigate to="/login" />}
+          />
+
+{/* Admin Event and Reunion Routes */}
+        <Route
+          path="/admin/event_and_reunion_history"
+          element={isLoggedIn ? <Admin_Event_and_Reunion_History onLogout={handleLogout} /> : <Navigate to="/login" />}
+          />
+        <Route
+          path="/admin/event_and_reunion_invitation"
+          element={isLoggedIn ? <Admin_Event_and_Reunion_Invitation onLogout={handleLogout} /> : <Navigate to="/login" />}
+          />
+        <Route
+          path="/admin/event_and_reunion_form1"
+          element={isLoggedIn ? <Admin_Event_and_Reunion_Form1 onLogout={handleLogout} /> : <Navigate to="/login" />}
+          />
+        <Route
+          path="/admin/event_and_reunion_form2"
+          element={isLoggedIn ? <Admin_Event_and_Reunion_Form2 onLogout={handleLogout} /> : <Navigate to="/login" />}
+          />
+
+{/* Admin Feedback Routes */}
+        <Route
+          path="/admin/feedback"
+          element={isLoggedIn ? <Admin_Feedback onLogout={handleLogout} /> : <Navigate to="/login" />}
+        />
+        <Route
+          path="/admin/feedback_form"
+          element={isLoggedIn ? <Admin_Feedback_Form onLogout={handleLogout} /> : <Navigate to="/login" />}
+        />
+
+{/* Admin Alumini Routes */}
+        <Route
+          path="/admin/alumini"
+          element={isLoggedIn ? <Admin_Alumini onLogout={handleLogout} /> : <Navigate to="/login" />}
+        />
+        <Route
+          path="/admin/alumini_form"
+          element={isLoggedIn ? <Admin_Alumini_Form onLogout={handleLogout} /> : <Navigate to="/login" />}
+        />
 
 
 
-{/* Master Route for Unknown EndPoint */}
-        <Route path="*" element={<Navigate to={isLoggedIn ? "/alumini/dashboard" : "/landing"} />} />
       </Routes>
     </Router>
   )

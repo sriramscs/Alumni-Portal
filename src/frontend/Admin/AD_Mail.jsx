@@ -1,7 +1,7 @@
 
 import { useNavigate } from "react-router-dom";
 import Sidebar from "./Components/Sidebar/Sidebar";
-import styles from "./Mail.module.css";
+import styles from "./AD_Mail.module.css";
 import { useState } from "react";
 
 const MailData = [
@@ -167,7 +167,14 @@ export default function Admin_Mail({ onLogout }) {
               <h2 className={styles.pageTitle}>Mail History</h2>
             </div>
             <div className={styles.headerActions}>
-              <button className={styles.draftBtn} onClick={() => navigate('/admin/mail/draft_history') } >Drafts</button>
+              {/* Mail Actions */}
+              <div className={styles.actionHeader} onClick={() => { navigate('/admin/mail/draft_history') }} >
+                <button className={styles.draftsBtn}>
+                  <span className="material-symbols-outlined">drafts</span>
+                  <span>Drafts</span>
+                  <span className={styles.badge}>12</span>
+                </button>
+              </div>
               <div className={styles.searchWrapper}>
                 <input
                   className={styles.searchInput}

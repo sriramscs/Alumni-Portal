@@ -56,6 +56,16 @@
   background-color: #1a6b1a;
 }
 
+/* Back Button & Actions Wrapper */
+.backButtonWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding-bottom: 16px;
+  gap: 1rem;
+}
+
 /* Back Button */
 .backButton {
   display: flex;
@@ -64,8 +74,6 @@
   color: #475569;
   cursor: pointer;
   transition: color 0.2s;
-  width: fit-content;
-  padding-bottom: 16px;
 }
 
 .backButton:hover {
@@ -77,41 +85,58 @@
   font-weight: 500;
 }
 
+.actionButtons {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.sendicon {
+  width: 1rem;
+  height: 1rem;
+}
+
 .actionGroup {
   display: flex;
   gap: 1rem;
 }
 
 .editBtn {
-  padding: 0.5rem 1.5rem;
-  border: 1px solid var(--forest-green);
-  color: var(--forest-green);
-  background: transparent;
-  font-weight: 600;
+  background-color: var(--forest-green);
+  color: #ffffff;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  font-weight: 700;
   border-radius: 0.5rem;
   cursor: pointer;
   transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 0 10px 15px -3px rgba(34, 139, 34, 0.2);
 }
 
 .editBtn:hover {
-  background-color: var(--forest-green);
-  color: #ffffff;
+  background-color: var(--forest-green-hover);
 }
 
 .deleteBtn {
-  padding: 0.5rem 1.5rem;
-  border: 1px solid #EF4444; /* red-500 */
-  color: #EF4444;
-  background: transparent;
-  font-weight: 600;
+  background-color: #EF4444;
+  color: #ffffff;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  font-weight: 700;
   border-radius: 0.5rem;
   cursor: pointer;
   transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 0 10px 15px -3px rgba(239, 68, 68, 0.2);
 }
 
 .deleteBtn:hover {
-  background-color: #EF4444;
-  color: #ffffff;
+  background-color: #dc2626;
 }
 
 /* ==================== EMAIL DRAFT CARD ==================== */
@@ -255,7 +280,7 @@
 .sendBtn {
   background-color: var(--forest-green);
   color: #ffffff;
-  padding: 0.75rem 2.5rem;
+  padding: 0.75rem 1rem;
   border-radius: 0.5rem;
   font-weight: 700;
   border: none;

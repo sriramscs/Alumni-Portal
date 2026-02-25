@@ -1,4 +1,4 @@
-import styles from './CreateMail.module.css';
+import styles from './AD_CreateMail.module.css';
 import Sidebar from './Components/Sidebar/Sidebar';
 import { useState } from 'react';
 

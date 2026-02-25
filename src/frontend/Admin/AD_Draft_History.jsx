@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import Sidebar from './Components/Sidebar/Sidebar';
-import styles from './Draft_History.module.css';
+import styles from './AD_Draft_History.module.css';
 
 const Admin_Draft_History = ( {onLogout} ) => {
 
@@ -104,15 +104,7 @@ const Admin_Draft_History = ( {onLogout} ) => {
             <span>Back</span>
           </div>
         <div className={styles.contentWrapper}>
-          
-          {/* Mail Actions */}
-          <div className={styles.actionHeader}>
-            <button className={styles.draftsBtn}>
-              <span className="material-symbols-outlined">drafts</span>
-              <span>Drafts</span>
-              <span className={styles.badge}>12</span>
-            </button>
-          </div>
+        
 
           {/* Drafts List Header */}
           <div className={styles.listHeader}>
@@ -141,13 +133,9 @@ const Admin_Draft_History = ( {onLogout} ) => {
                 </div>
                 
                 <div className={styles.colDate}>
-                  <span className={styles.dateText}>{draft.date}</span>
                   <div className={styles.actionGroup}>
-                    <button className={`${styles.iconBtn} ${styles.editBtn}`} title="Edit">
-                      <span className="material-symbols-outlined">edit</span>
-                    </button>
-                    <button className={`${styles.iconBtn} ${styles.deleteBtn}`} title="Delete">
-                      <span className="material-symbols-outlined">delete</span>
+                    <button className={styles.viewBtn} title="View" onClick={() => { navigate('/admin/mail/draft') }} >
+                      <span>View</span>
                     </button>
                   </div>
                 </div>

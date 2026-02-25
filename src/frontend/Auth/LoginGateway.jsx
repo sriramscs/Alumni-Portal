@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styles from './LoginGateway.module.css';
-import ksrLogo from '../../assets/KSR_College_Logo.svg';
-import NavBar from '../Alumini/Components/NavBar/NavBar';
+import NavBar from '../Alumini/Components/Navbar/NavBar';
+
 
 export default function LoginGateway({ onLogin }) {
   const navigate = useNavigate();

@@ -398,19 +398,20 @@
 
 .editBtn {
   padding: 0.625rem 1.5rem;
-  background-color: var(--white);
-  color: var(--forest-green);
-  border: 2px solid var(--forest-green);
-  font-weight: 600;
-  font-size: 0.875rem;
-  border-radius: 0.5rem;
-  cursor: pointer;
-  transition: all 0.2s;
-}
-
-.editBtn:hover {
   background-color: var(--forest-green);
   color: var(--white);
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+.editBtn:hover {
+  background-color: var(--forest-green-hover);
   transform: translateY(-1px);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
 }

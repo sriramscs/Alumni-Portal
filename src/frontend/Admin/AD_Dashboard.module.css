@@ -1,0 +1,612 @@
+/* --- Alumni Dashboard Scrollbar Styles --- */
+.dashboardContent::-webkit-scrollbar {
+  width: 10px;
+}
+.dashboardContent::-webkit-scrollbar-track {
+  background-color: #E5E7EB;
+  border-radius: 10px;
+  margin: 8px 0;
+}
+.dashboardContent::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #2E6F40, #256032);
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  border: 2px solid #E5E7EB;
+  box-shadow: inset 0 0 6px rgba(46, 111, 64, 0.3);
+}
+.dashboardContent::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #0069D9, #0051CC);
+  border-color: #007BFF;
+}
+.dashboardContent::-webkit-scrollbar-thumb:active {
+  background: linear-gradient(to bottom, #0051CC, #003d99);
+  box-shadow: inset 0 0 10px rgba(0, 123, 255, 0.7);
+}
+.dashboardContent {
+  scrollbar-color: linear-gradient(to bottom, #007BFF, #0069D9) #E5E7EB;
+  scrollbar-width: auto;
+}
+/* --- Alumni Dashboard Search Bar Styles --- */
+.searchContainer {
+  position: relative;
+}
+.searchInput {
+  width: 16rem;
+  padding-left: 2.5rem;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  outline: none;
+}
+.searchInput:focus {
+  box-shadow: 0 0 0 2px #0284c7;
+  border-color: transparent;
+}
+.searchIcon {
+  position: absolute;
+  left: 0.75rem;
+  top: 0.625rem;
+  color: #94a3b8;
+  font-size: 1.25rem;
+}
+/* --- Copied from Alumni Dashboard Top Bar --- */
+.header {
+  position: sticky;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  z-index: 40;
+}
+.headerLeft {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.collegeName {
+  color: #001E2B;
+  font-weight: 700;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  letter-spacing: -0.025em;
+  margin-left:50px;
+  font-family: 'Inter', sans-serif;
+  white-space: nowrap;
+}
+.headerRight {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+.searchContainer {
+  position: relative;
+}
+.searchInput {
+  width: 16rem;
+  padding-left: 2.5rem;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  outline: none;
+}
+.searchInput:focus {
+  box-shadow: 0 0 0 2px #0284c7;
+  border-color: transparent;
+}
+.searchIcon {
+  position: absolute;
+  left: 0.75rem;
+  top: 0.625rem;
+  color: #94a3b8;
+  font-size: 1.25rem;
+}
+.headerFlexContainer {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+.notificationBtn {
+  position: relative;
+  padding: 0.5rem;
+  color: #64748b;
+  border-radius: 9999px;
+  transition: background-color 0.2s;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.notificationBtn:hover {
+  background-color: #f8fafc;
+}
+.notificationDot {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: #ef4444;
+  border-radius: 9999px;
+  border: 2px solid white;
+}
+.divider {
+  height: 2rem;
+  width: 1px;
+  background-color: #e2e8f0;
+}
+.userInfo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.userDetails {
+  text-align: right;
+}
+.userName {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #001E2B;
+}
+.userClass {
+  font-size: 0.75rem;
+  color: #64748b;
+}
+.userAvatar {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 9999px;
+  background-color: #f1f5f9;
+  border: 2px solid #0284c7;
+  overflow: hidden;
+}
+.imageFullCover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.headerLeft {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  padding-right: 24px;
+}
+
+/* Dashboard.module.css - Pure CSS version, no Tailwind */
+.dashboardWrapper {
+  display: flex;
+  min-height: 100vh;
+  background: var(--background-light, #F8FAFC);
+  color: #222;
+  font-family: 'Inter', sans-serif;
+}
+.sidebar {
+  width: 260px;
+  background: #fff;
+  border-right: 1px solid #e5e7eb;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  z-index: 50;
+  box-shadow: 0 4px 24px 0 rgba(0,0,0,0.04);
+}
+.sidebarHeader {
+  padding: 32px 24px 16px 24px;
+}
+.portalTitle {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #222;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.iconSchool {
+  color: #2E6F40;
+  font-size: 1.5rem;
+}
+.sidebarNav {
+  flex: 1;
+  padding: 0 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.sidebarLink {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  border-radius: 10px;
+  color: #64748b;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.2s, color 0.2s;
+}
+.sidebarLink:hover {
+  background: #f1f5f9;
+  color: #2E6F40;
+}
+.active {
+  background: rgba(46, 111, 64, 0.1);
+  color: #2E6F40;
+}
+.sidebarFooter {
+  padding: 16px;
+  border-top: 1px solid #e5e7eb;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: auto;
+}
+.logoutLink {
+  color: #ef4444;
+  font-weight: 500;
+}
+.mainContent {
+  width: 100%;
+  min-height: 100vh;
+  background: var(--background-light, #F8FAFC);
+  transition: background 0.2s;
+  overflow-x: hidden;
+}
+.header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  margin-left: calc(-1 * (100vw - 100%)/2);
+  margin-right: calc(-1 * (100vw - 100%)/2);
+  background: #fff;
+  border-bottom: 1px solid #e5e7eb;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  padding: 0 32px 0 32px;
+  z-index: 40;
+  gap: 16px;
+  box-sizing: border-box;
+}
+.headerRight {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-left: auto;
+  min-width: 380px;
+  margin-right: 50px;
+}
+.notificationBtn {
+  position: relative;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #64748b;
+  font-size: 1.3rem;
+}
+.notificationDot {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 8px;
+  height: 8px;
+  background: #ef4444;
+  border-radius: 50%;
+  border: 2px solid #fff;
+}
+.profileInfo {
+  display: flex;
+  align-items: center;
+  background: transparent;
+  position: relative;
+  gap: 10px;
+}
+.profileNameBox {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  background: transparent;
+  min-width: 120px;
+  max-width: 180px;
+  overflow: hidden;
+}
+.profileTextBox { display: none; }
+.profileText { display: none; }
+.profileName {
+  font-size: 1.1.1rem;
+  font-weight: 700;
+  color: #002c3e;
+  margin-bottom: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.profileClass {
+  font-size: 0.95rem;
+  color: #94a3b8;
+  margin-bottom: 0;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.profileImgWrapper {
+  position: relative;
+  margin-left: -16px;
+  z-index: 2;
+  background: transparent;
+}
+.profileImg {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 2.5px solid #2196f3;
+  object-fit: cover;
+  background: #fff;
+  box-shadow: 0 1px 4px 0 rgba(0,0,0,0.08);
+}
+.dashboardContent {
+  padding: 25px 20px 0px 0px;
+  margin-left: 95px;
+  overflow-y: auto;
+  max-height: calc(100vh - 80px);
+  overflow-x: hidden;
+}
+.cardsRow {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 16px;
+}
+.card {
+  background: #fff;
+  border-radius: 24px;
+  box-shadow: 0 2px 8px 0 rgba(0,0,0,0.04);
+  border: 1px solid #f1f5f9;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  min-height: 220px;
+  position: relative;
+}
+.overlapColumn {
+  margin-left: 0;
+}
+.cardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+.cardTitle {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #222;
+  text-transform: uppercase;
+}
+.cardBadge {
+  background: #fee2e2;
+  color: #dc2626;
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: 8px;
+  font-weight: bold;
+}
+.cardIcon {
+  font-size: 1.5rem;
+  margin-right: 8px;
+}
+.cardStatus {
+  font-size: 0.7rem;
+  color: #94a3b8;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.cardStatusGreen {
+  background: #d1fae5;
+  color: #2E6F40;
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: 8px;
+  font-weight: bold;
+  text-transform: uppercase;
+  border: 1px solid #bbf7d0;
+}
+.cardBody {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.mailPreview {
+  background: #f1f5f9;
+  border-radius: 12px;
+  padding: 12px;
+  font-size: 0.95rem;
+  color: #64748b;
+  border: 1px solid #e5e7eb;
+}
+.cardAction {
+  margin-top: 16px;
+  width: 100%;
+  padding: 8px 0;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #64748b;
+  background: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: color 0.2s;
+}
+.cardAction:hover {
+  color: #2E6F40;
+}
+.cardActionOutline {
+  margin-top: 16px;
+  width: 100%;
+  border: 1px solid #2E6F40;
+  color: #2E6F40;
+  font-size: 0.95rem;
+  font-weight: bold;
+  padding: 8px 0;
+  border-radius: 12px;
+  background: none;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.cardActionOutline:hover {
+  background: #e7f5ea;
+}
+.cardActionPrimary {
+  margin-top: 16px;
+  width: 100%;
+  background: #2E6F40;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 12px 0;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 2px 8px 0 #2E6F4020;
+  transition: background 0.2s;
+}
+.cardActionPrimary:hover {
+  background: #256032;
+}
+.cardUpcoming {
+  background: #ede9fe;
+  color: #7c3aed;
+  font-size: 0.7rem;
+  font-weight: bold;
+  padding: 2px 8px;
+  border-radius: 8px;
+  text-transform: uppercase;
+}
+.reunionTitle {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #222;
+  margin-bottom: 8px;
+  text-align: center;
+}
+.reunionDesc {
+  font-size: 0.95rem;
+  color: #64748b;
+  margin-bottom: 16px;
+  text-align: center;
+}
+.reunionCountdown {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+.reunionCountdown div {
+  background: #f1f5f9;
+  border-radius: 12px;
+  padding: 12px 16px;
+  font-size: 1.1rem;
+  color: #222;
+  border: 1px solid #e5e7eb;
+  text-align: center;
+}
+.reunionBtn {
+  width: 100%;
+  background: #0F172A;
+  color: #fff;
+  font-weight: bold;
+  padding: 16px 0;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 16px 0 #0F172A20;
+  transition: background 0.2s;
+}
+.reunionBtn:hover {
+  background: #1e293b;
+}
+.cardAchievements {
+  background: #fff;
+  border-radius: 24px;
+  box-shadow: 0 2px 8px 0 rgba(0,0,0,0.04);
+  border: 1px solid #f1f5f9;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  min-height: 220px;
+  position: relative;
+  grid-column: span 2;
+}
+.achievementsHeader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+.achievementsTitle {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #222;
+}
+.achievementsViewAll {
+  color: #2E6F40;
+  font-size: 0.95rem;
+  font-weight: 500;
+  margin-left: auto;
+  text-decoration: none;
+  transition: text-decoration 0.2s;
+}
+.achievementsViewAll:hover {
+  text-decoration: underline;
+}
+.achievementsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+.achievementItem {
+  background: #f1f5f9;
+  border-radius: 12px;
+  padding: 16px;
+  border: 1px solid #e5e7eb;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.achievementDate {
+  font-size: 0.7rem;
+  color: #dc2626;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.achievementTitle {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #222;
+}
+.achievementDesc {
+  font-size: 0.9rem;
+  color: #64748b;
+}
+.achievementReadMore {
+  color: #2E6F40;
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-decoration: none;
+  margin-top: auto;
+  transition: text-decoration 0.2s;
+}
+.achievementReadMore:hover {
+  text-decoration: underline;
+}
