@@ -1,4 +1,4 @@
-import styles from "./sidebar.module.css";
+import styles from "./Sidebar.module.css";
 import collegeLogo from '../../../../assets/KSR_College_Logo.svg'
 import { useNavigate } from 'react-router-dom';
 

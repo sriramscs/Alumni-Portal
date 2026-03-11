@@ -1,5 +1,5 @@
 import Sidebar from './Components/Sidebar/Sidebar';
-import styles from './AD_Feedback_Form.module.css';
+import styles from './AD_Feedback_form.module.css';
 
 const Admin_Feedback_Form = ( { onLogout } ) => {
   // Assessment sections data to keep JSX clean

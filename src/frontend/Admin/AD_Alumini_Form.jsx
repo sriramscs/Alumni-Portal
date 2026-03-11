@@ -1,4 +1,4 @@
-import styles from './AD_Alumini_Form.module.css';
+import styles from './AD_Alumini_form.module.css';
 import Sidebar from './Components/Sidebar/Sidebar';
 
 const Admin_Alumini_Form = ( { onLogout } ) => {
